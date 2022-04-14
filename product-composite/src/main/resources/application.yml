@@ -1,0 +1,15 @@
+# 현 구성은 후에 Service Discovery 로 대체되어진다.
+
+server:
+  port: 8080
+
+app:
+  product:
+    host: localhost
+    port: 7001
+  recommendation:
+    host: localhost
+    port: 7002
+  review:
+    host: localhost
+    port: 7003

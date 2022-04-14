@@ -1,0 +1,8 @@
+rootProject.name = 'playground'
+include 'product'
+include 'api'
+include 'product-composite'
+include 'review'
+include 'recommendation'
+include 'util'
+

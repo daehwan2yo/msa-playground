@@ -1,0 +1,8 @@
+server:
+  port: 7001
+
+logging:
+  level:
+    root: INFO
+    com.micro: DEBUG
+    com.playground: DEBUG
