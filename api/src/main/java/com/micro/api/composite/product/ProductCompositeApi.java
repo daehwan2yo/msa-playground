@@ -9,5 +9,5 @@ import com.micro.api.composite.product.dto.ProductAggregate;
 
 public interface ProductCompositeApi {
 	@GetMapping(value = "/product-composite/{productId}", produces = APPLICATION_JSON_VALUE)
-	ProductAggregate getProduct(@PathVariable int productId);
+	ProductAggregate getProduct(@PathVariable Long productId);
 }

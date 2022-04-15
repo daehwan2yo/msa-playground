@@ -9,5 +9,5 @@ import com.micro.api.core.product.dto.ProductDto;
 
 public interface ProductApi {
 	@GetMapping(value = "/product/{productId}", produces = APPLICATION_JSON_VALUE)
-	ProductDto getProduct(@PathVariable int productId);
+	ProductDto getProduct(@PathVariable Long productId);
 }
