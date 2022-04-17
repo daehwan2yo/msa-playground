@@ -5,6 +5,15 @@ spring:
   profiles:
     default: local
 
+api:
+  common:
+    version: 1.0
+    title: MSA playground API document
+    description: this document for retrieve API information
+  product-composite:
+    get-composite-product:
+      description: Returns a composite view of the specified product id
+
 ---
 spring:
   config:
