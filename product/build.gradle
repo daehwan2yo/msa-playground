@@ -4,10 +4,6 @@ plugins {
     id 'java'
 }
 
-ext {
-    mapstruct_version = '1.4.0.Final'
-}
-
 group = 'com.playground'
 version = '1.0'
 sourceCompatibility = '11'
@@ -18,11 +14,10 @@ repositories {
 
 dependencies {
     implementation project(':api')
+    implementation project(':util')
 
     // Map struct
-    implementation 'org.mapstruct:mapstruct:${mapstruct_version}'
-    annotationProcessor 'org.mapstruct:mapstruct-processor:${mapstruct_version}'
-    testAnnotationProcessor 'org.mapstruct:mapstruct-processor:${mapstruct_version}'
+    implementation 'org.mapstruct:mapstruct:1.4.2.Final'
 
     // for persistence
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
