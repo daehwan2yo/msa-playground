@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  product-composite:
+    build: product-composite
+    ports:
+      - "8080:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 150m
+
+  product:
+    build: product
+    deploy:
+      resources:
+        limits:
+          memory: 150m
+
+  recommendation:
+    build: recommendation
+    deploy:
+      resources:
+        limits:
+          memory: 150m
+
+  review:
+    build: review
+    deploy:
+      resources:
+        limits:
+          memory: 150m

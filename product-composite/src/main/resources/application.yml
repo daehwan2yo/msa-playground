@@ -29,12 +29,12 @@ spring:
       on-profile: docker
 app:
   product:
-    host:
+    host: product
     port: 8080
   recommendation:
-    host:
+    host: recommendation
     port: 8080
   review:
-    host:
+    host: review
     port: 8080
 
