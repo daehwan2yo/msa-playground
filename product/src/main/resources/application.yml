@@ -1,19 +1,22 @@
 spring:
   profiles:
     default: local
-
 logging:
   level:
     root: INFO
     com.micro: DEBUG
     com.playground: DEBUG
 
-
 ---
 spring:
   config:
     activate:
       on-profile: local
+  mongodb:
+    embedded:
+      version: 3.0.0
+  jpa:
+    show-sql: true
 server:
   port: 7001
 
