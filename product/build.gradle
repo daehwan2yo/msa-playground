@@ -26,7 +26,7 @@ dependencies {
 
     // for persistence
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
-    testImplementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    // testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
 
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
