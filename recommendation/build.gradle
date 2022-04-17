@@ -4,6 +4,10 @@ plugins {
     id 'java'
 }
 
+ext {
+    mapstruct_version = '1.4.2.Final'
+}
+
 group = 'com.playground'
 version = '1.0'
 sourceCompatibility = '11'
@@ -14,6 +18,15 @@ repositories {
 
 dependencies {
     implementation project(':api')
+
+    // Map struct
+    implementation 'org.mapstruct:mapstruct:${mapstruct_version}'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:${mapstruct_version}'
+    testAnnotationProcessor 'org.mapstruct:mapstruct-processor:${mapstruct_version}'
+
+    // for persistence
+    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+    testImplementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
