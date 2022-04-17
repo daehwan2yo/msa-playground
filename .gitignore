@@ -39,6 +39,3 @@ out/
 *.dylib
 *.dylib
 *.adoc
-
-## Dockerfile - divide with each environment
-Dockerfile

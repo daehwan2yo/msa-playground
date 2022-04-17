@@ -1,8 +1,25 @@
-server:
-  port: 7002
+spring:
+  profiles:
+    default: local
 
 logging:
   level:
     root: INFO
     com.micro: DEBUG
     com.playground: DEBUG
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+server:
+  port: 7002
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+server:
+  port: 8080

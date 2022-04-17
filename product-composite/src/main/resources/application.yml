@@ -1,7 +1,15 @@
 # 현 구성은 후에 Service Discovery 로 대체되어진다.
-
 server:
   port: 8080
+spring:
+  profiles:
+    default: local
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
 
 app:
   product:
@@ -13,3 +21,20 @@ app:
   review:
     host: localhost
     port: 7003
+
+---
+spring:
+  config:
+    activate:
+      on-profile: docker
+app:
+  product:
+    host:
+    port: 8080
+  recommendation:
+    host:
+    port: 8080
+  review:
+    host:
+    port: 8080
+
