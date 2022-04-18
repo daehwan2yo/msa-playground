@@ -37,10 +37,6 @@ public class Product {
 		return version;
 	}
 
-	public void setVersion(Long version) {
-		this.version = version;
-	}
-
 	public Long getProductId() {
 		return productId;
 	}

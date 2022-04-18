@@ -1,6 +1,10 @@
 spring:
   profiles:
     default: local
+  data:
+    mongodb:
+      auto-index-creation: true
+
 logging:
   level:
     root: INFO
