@@ -1,0 +1,7 @@
+env:
+  mongo:
+    username: root
+    password: 1234
+    host: localhost
+    port: 27017
+    db: test

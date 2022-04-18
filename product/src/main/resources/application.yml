@@ -1,9 +1,11 @@
 spring:
   profiles:
-    default: local
+    default: local, env
   data:
     mongodb:
       auto-index-creation: true
+      uri: mongodb://${env.mongo.host}:${env.mongo.port}
+      database: ${env.mongo.db}
 
 logging:
   level:
