@@ -1,6 +1,6 @@
 spring:
   profiles:
-    default: local, env
+    default: local, dev
   data:
     mongodb:
       auto-index-creation: true

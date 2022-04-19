@@ -35,9 +35,8 @@ out/
 
 ### environment variable ###
 .env
-*-env.yml
+**/*-dev.yml
 
 ### rest docs ###
-*.dylib
 *.dylib
 *.adoc
