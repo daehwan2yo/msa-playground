@@ -8,6 +8,7 @@ spring:
   data:
     mongodb:
       auto-index-creation: true
+      uri: mongodb://${env.mongo.host}:${env.mongo.port}/${env.mongo.db}
 
 logging:
   level:
