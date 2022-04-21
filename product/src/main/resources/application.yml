@@ -1,11 +1,13 @@
 spring:
   profiles:
-    default: local, dev
+    default: local
+    group:
+      local: local, dev
+      docker: docker, dev
+
   data:
     mongodb:
       auto-index-creation: true
-      uri: mongodb://${env.mongo.host}:${env.mongo.port}
-      database: ${env.mongo.db}
 
 logging:
   level:
