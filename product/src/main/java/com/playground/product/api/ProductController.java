@@ -6,22 +6,34 @@ import org.springframework.web.bind.annotation.RestController;
 import com.micro.api.core.product.ProductApi;
 import com.micro.api.core.product.dto.ProductDto;
 import com.micro.util.http.ApiUtil;
-import com.playground.product.service.ProductValidator;
+import com.playground.product.service.ProductService;
 
 @RestController
 public class ProductController implements ProductApi {
 	private final ApiUtil apiUtil;
-	private final ProductValidator productValidator;
+	private final ProductService productService;
 
 	@Autowired
-	public ProductController(ApiUtil apiUtil, ProductValidator productValidator) {
+	public ProductController(ApiUtil apiUtil, ProductService productService) {
 		this.apiUtil = apiUtil;
-		this.productValidator = productValidator;
+		this.productService = productService;
 	}
 
 	@Override
 	public ProductDto getProduct(Long productId) {
-		productValidator.input(productId);
-		return new ProductDto(productId, "name-" + productId, 123, apiUtil.getServiceAddress());
+		ProductDto retrievedProduct = productService.retrieve(productId);
+		retrievedProduct.setServiceAddress(apiUtil.getServiceAddress());
+
+		return retrievedProduct;
+	}
+
+	@Override
+	public ProductDto createProduct(ProductDto productDto) {
+		return productService.create(productDto);
+	}
+
+	@Override
+	public void removeProduct(Long productId) {
+		productService.remove(productId);
 	}
 }

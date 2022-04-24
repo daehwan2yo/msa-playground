@@ -6,4 +6,6 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface ProductRepository extends PagingAndSortingRepository<Product, String> {
 	Optional<Product> findByProductId(Long productId);
+
+	void deleteByProductId(Long productId);
 }

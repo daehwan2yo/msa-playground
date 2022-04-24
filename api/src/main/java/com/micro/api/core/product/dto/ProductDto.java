@@ -31,4 +31,8 @@ public class ProductDto {
 	public String getServiceAddress() {
 		return serviceAddress;
 	}
+
+	public void setServiceAddress(String serviceAddress) {
+		this.serviceAddress = serviceAddress;
+	}
 }
