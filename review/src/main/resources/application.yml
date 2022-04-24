@@ -1,6 +1,13 @@
 spring:
   profiles:
     default: local
+    group:
+      local: local, dev
+      docker: docker, dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${env.mysql.host}:${env.mysql.port}/${env.mysql.db}
+
 logging:
   level:
     root: INFO

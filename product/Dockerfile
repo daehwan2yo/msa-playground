@@ -2,6 +2,8 @@ FROM openjdk:11-jdk
 
 EXPOSE 8080
 
-ADD ./build/libs/*-1.0.jar app.jar
+ARG PROJECT_DIRECTORY=/build
 
-ENTRYPOINT ["java","-jar","-Dspring.profiles.active=docker","/app.jar"]
+WORKDIR %PROJECT_DIRECTORY
+
+ENTRYPOINT ["java","-jar","-Dspring.profiles.active=docker","/build/app.jar"]

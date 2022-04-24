@@ -16,5 +16,8 @@ public class ProductApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext applicationContext = SpringApplication.run(ProductApplication.class, args);
+		String mongoDbUri = applicationContext.getEnvironment()
+											.getProperty("spring.data.mongodb.uri");
+		LOG.info("Connected to MongoDb : {}", mongoDbUri);
 	}
 }
