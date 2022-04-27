@@ -1,0 +1,9 @@
+FROM openjdk:11-jdk
+
+EXPOSE 8761
+
+ARG PROJECT_DIRECTORY=/build
+
+WORKDIR %PROJECT_DIRECTORY
+
+ENTRYPOINT ["java","-jar","/build/app.jar"]
