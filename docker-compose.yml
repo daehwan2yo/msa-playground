@@ -1,6 +1,21 @@
 version: "3.8"
 
 services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "${MONGO_PORT}:27017"
+
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    ports:
+      - "${MYSQL_PORT}:3306"
+    env_file:
+      - .env
+
+
   product-composite:
     build: product-composite
     ports:
@@ -20,6 +35,8 @@ services:
       resources:
         limits:
           memory: 150m
+    depends_on:
+      - mongodb
 
   recommendation:
     build: recommendation
@@ -29,6 +46,8 @@ services:
       resources:
         limits:
           memory: 150m
+    depends_on:
+      - mongodb
 
   review:
     build: review
@@ -38,17 +57,7 @@ services:
       resources:
         limits:
           memory: 150m
-
-  mongodb:
+    depends_on:
+      - mysql
     image: mongo:latest
-    container_name: mongo
-    ports:
-      - "${MONGO_PORT}:27017"
-
-  mysql:
-    image: mysql:latest
-    container_name: mysql
-    ports:
-      - "${MYSQL_PORT}:3306"
-    env_file:
-      - .env
+    restart: on-failure
