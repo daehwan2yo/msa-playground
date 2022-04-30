@@ -1,10 +1,11 @@
 spring:
+  application:
+    name: product
   profiles:
     default: local
     group:
       local: local, dev
       docker: docker, dev
-
   data:
     mongodb:
       auto-index-creation: true
@@ -15,6 +16,12 @@ logging:
     root: INFO
     com.micro: DEBUG
     com.playground: DEBUG
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url: ${env.eureka.protocol}://${env.eureka.host}:${env.eureka.port}/eureka
 
 ---
 spring:

@@ -4,6 +4,10 @@ server:
 spring:
   profiles:
     default: local
+    group:
+      local: local, dev
+  application:
+    name: product-composite
 
 api:
   common:
@@ -13,6 +17,12 @@ api:
   product-composite:
     get-composite-product:
       description: Returns a composite view of the specified product id
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url: ${env.eureka.protocol}://${env.eureka.host}:${env.eureka.port}/eureka
 
 ---
 spring:

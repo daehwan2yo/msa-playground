@@ -12,6 +12,10 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    set('springCloudVersion', "2021.0.1")
+}
+
 dependencies {
     implementation project(':api')
 
@@ -22,10 +26,19 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
     // testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
 
+    // service discovery
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.projectreactor:reactor-test'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }
 
 tasks.named('test') {

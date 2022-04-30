@@ -7,13 +7,18 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://${env.mysql.host}:${env.mysql.port}/${env.mysql.db}
-
+  application:
+    name: review
 logging:
   level:
     root: INFO
     com.micro: DEBUG
     com.playground: DEBUG
-
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url: ${env.eureka.protocol}://${env.eureka.host}:${env.eureka.port}/eureka
 ---
 spring:
   config:
