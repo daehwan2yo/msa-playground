@@ -22,7 +22,8 @@ eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
-    service-url: ${env.eureka.protocol}://${env.eureka.host}:${env.eureka.port}/eureka
+    service-url:
+      defaultZone: ${env.eureka.protocol}://${env.eureka.host}:${env.eureka.port}/eureka
 
 ---
 spring:

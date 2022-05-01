@@ -23,7 +23,7 @@ public class ProductCompositeApplication {
 
 	private static void logDiscoveryConnection(ConfigurableApplicationContext applicationContext) {
 		String discoveryUri = applicationContext.getEnvironment()
-												.getProperty("eureka.client.service-url");
+												.getProperty("eureka.client.service-url.defaultZone");
 
 		LOG.info("Connected to Discovery : {}", discoveryUri);
 	}

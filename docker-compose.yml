@@ -31,7 +31,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 150m
+          memory: 180m
 
   product:
     build: product
@@ -40,7 +40,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 150m
+          memory: 180m
     depends_on:
       - mongodb
       - discovery
@@ -52,7 +52,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 150m
+          memory: 180m
     depends_on:
       - mongodb
       - discovery
@@ -64,7 +64,7 @@ services:
     deploy:
       resources:
         limits:
-          memory: 150m
+          memory: 180m
     depends_on:
       - mysql
       - discovery
